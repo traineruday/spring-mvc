@@ -107,19 +107,6 @@ public class UserController {
 
 	}
 
-	@RequestMapping(value = "/users/{id}/delete", method = RequestMethod.POST)
-	public String deleteUser(@PathVariable("id") int id, final RedirectAttributes redirectAttributes) {
-
-
-		userService.delete(id);
-
-		redirectAttributes.addFlashAttribute("css", "success");
-		redirectAttributes.addFlashAttribute("msg", "User is deleted!");
-
-		return "redirect:/users";
-
-	}
-
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
 	public String showUser(@PathVariable("id") int id, Model model) throws Exception {
 
